@@ -165,3 +165,46 @@ Of course we can combine this with functions.
 ```haskell
 boomBangs xs = [if x `mod` 2 == 1 then "BOOM!" else "BANG!" | x <- xs]
 ```
+
+## Tubles
+
+Like lists tuples store several values into a single value. But there are fundamental differences. While a list consists for example of number then its type is a list of numbers. It does not matter the number of items in the list. On the other side with tuples you know the length. Also, tuples can combine a different data types such taht we could have a tuple that pairs an integer with a string. If tuples are put together into a list the tuple type defines the type of a list. For instance a lists consists of a number of 2 tuple with integer/string pairs. Then you cannot add a 3 tuple. Tuples are denoted by ( and ) brackets.
+
+Of course there are functions that can be used over tuples.
+
+```haskell
+fst (8, 11) -- 8
+fst ("Wow", 42) -- "Wow"
+
+snd (8, 11) -- 11
+snd ("Wow", 42) -- 42
+```
+
+Note that these functions only work on pairs.
+
+An interessting function is zip. It takes in as parameters two lists of different types with the same length and returns a list of 2 tuples. If one list is longer than the other it will get cut to the length of the shorter list.
+
+```haskell
+zip [1,2,3,4,5] [5,5,5,5,5] -- [(1,5),(2,5),(3,5),(4,5),(5,5)]
+zip [1 .. 5] ["one", "two", "three", "four", "five"] -- [(1,"one"),(2,"two"),(3,"three"),(4,"four"),(5,"five")]
+zip [5,3,2,6,2,7,2,5,4,6,6] ["im","a","turtle"] -- [(5,"im"),(3,"a"),(2,"turtle")]
+```
+
+[Here's](http://learnyouahaskell.com/starting-out#tuples) (problem and solution is given at the end of the tuples section) a problem that combines tuples and list comprehensions: which right triangle that has integers for all sides and all sides equal to or smaller than 10 has a perimeter of 24? First, let's try generating all triangles with sides equal to or smaller than 10:
+
+```haskell
+let triangles = [(a, b, c) | c <- [1..10], b <- [1..10], a <- [1..10]]
+```
+
+We are drawing the elements from three lists. These are 3 tuples that represent triangles with sides that are equal or less than 10. The next step is to add the condition that we whant only all triangles that are right. Also added is that side b is not the hypothenose and side is not larger than b.
+
+```haskell
+let rightTriangles = [(a, b, c) | c <- [1..10], b <- [1..c], a <- [1..b], a^2 + b^2 == c^2]
+```
+
+Lastly we modify the function by saying that we want the triangles with a perimeter of 24.
+
+```haskell
+let rightTriangles = [(a, b, c) | c <- [1..10], b <- [1..c], a <- [1..b], a^2 + b^2 == c^2, a + b + c == 24]
+rightTriangles -- [(6,8,10)]
+```
