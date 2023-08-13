@@ -21,3 +21,11 @@ As an editor I use  Visual Studio Code. I have installed folowing packages:
 - haskell-linter
 - Haskel GHCi Debug Adapter Phoityne
 - haskell-build
+
+# GHCi
+
+Documentation about GHCi can be found [here]{https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html}. It is the interactive environment for GHC and includes an interactive debugger. Imaginge it like a command prompt you would find with Python. To enter a GHCi session you need to type ``ghci`` in the command promtp. At this point you could enter valid Haskell expressions.
+
+Enter ```:?``` for help and ```:l script_file``` to load a sources file. Note that you leave out the file extension. If a file is loaded its functions can be used.
+
+A more detailed documentation you will find in the link above.
