@@ -4,7 +4,7 @@ The purpose of this repository is to explore concepts of funtional programming a
 
 # Compiler Setup
 
-The setup I use is on an Arch Linux machine. So I followed following [guide]{https://wiki.archlinux.org/title/haskell} for the installation.
+The setup I use is on an Arch Linux machine. So I followed following [guide](https://wiki.archlinux.org/title/haskell) for the installation.
 
 It consists of two elements plus configuration:
 - The Glasgow Haskell Compiler(GHC)
@@ -24,8 +24,12 @@ As an editor I use  Visual Studio Code. I have installed folowing packages:
 
 # GHCi
 
-Documentation about GHCi can be found [here]{https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html}. It is the interactive environment for GHC and includes an interactive debugger. Imaginge it like a command prompt you would find with Python. To enter a GHCi session you need to type ``ghci`` in the command promtp. At this point you could enter valid Haskell expressions.
+Documentation about GHCi can be found [here](https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html). It is the interactive environment for GHC and includes an interactive debugger. Imaginge it like a command prompt you would find with Python. To enter a GHCi session you need to type ``ghci`` in the command promtp. At this point you could enter valid Haskell expressions.
 
 Enter ```:?``` for help and ```:l script_file``` to load a sources file. Note that you leave out the file extension. If a file is loaded its functions can be used.
 
 A more detailed documentation you will find in the link above.
+
+# Content
+
+[01 Starting Point](01_Starting_Point.md)
